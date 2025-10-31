@@ -22,7 +22,7 @@ const CreateEventForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-     
+      // Convert latitude and longitude to number
       const eventData = { ...formData, latitude: Number(formData.latitude), longitude: Number(formData.longitude), maxParticipants: Number(formData.maxParticipants) };
       await createEvent(eventData);
       toast.success("Event created successfully!");
