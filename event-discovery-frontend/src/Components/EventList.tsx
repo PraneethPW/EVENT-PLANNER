@@ -4,7 +4,7 @@ import { getEvents } from "../api/eventApi";
 import toast from "react-hot-toast";
 
 interface EventItem {
-  id: string;
+  _id: string;
   title: string;
   description: string;
   location: string;
@@ -79,12 +79,12 @@ const EventList: React.FC = () => {
         <button type="submit">Filter</button>
       </form>
       {events.map((e) => (
-        <div className="event-card" key={e.id}>
+        <div className="event-card" key={e._id}>
           <h3>{e.title}</h3>
           <p>{e.description}</p>
           <p><b>Location:</b> {e.location}</p>
           <p><b>Date:</b> {new Date(e.date).toLocaleDateString()}</p>
-          <Link to={`/event/${e.id}`}>View Details</Link>
+          <Link to={`/event/${e._id}`}>View Details</Link>
         </div>
       ))}
     </div>
