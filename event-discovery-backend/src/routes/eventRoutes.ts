@@ -5,7 +5,7 @@ import Event from "../models/eventModel";
 
 const router = express.Router();
 
-
+// Validation middleware to check request and send errors
 const validateRequest = (req: Request, res: Response, next: NextFunction) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -14,7 +14,7 @@ const validateRequest = (req: Request, res: Response, next: NextFunction) => {
   next();
 };
 
-
+// POST /api/events with validation
 router.post(
   "/",
   [
@@ -51,7 +51,7 @@ router.post(
   }
 );
 
-
+// GET /api/events with optional location and geo filters
 router.get(
   "/",
   [
@@ -106,7 +106,7 @@ router.get(
   }
 );
 
-
+// GET /api/events/:id with ObjectId validation
 router.get(
   "/:id",
   [
