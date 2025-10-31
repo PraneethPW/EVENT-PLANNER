@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    /* === Core Directories === */
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* === Language Target === */
+    "target": "es2017",
+    "module": "commonjs",
+
+    /* === Type Definitions === */
+    "types": ["node", "express"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+
+    /* === Type Checking === */
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* === Source Maps === */
+    "sourceMap": true,
+
+    /* === Experimental Options === */
+    "resolveJsonModule": true,
+    "noImplicitAny": false
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
